@@ -51,6 +51,14 @@ Scenario: Handling missing email address during enrichment
   And if the email cannot be found
   Then the system should flag the Lead record as "Incomplete - Missing Email"
   And the lead should NOT proceed to the Generation phase
+
+Scenario: Handling companies with multiple contact people or ambiguous roles
+  Given a single company entity is identified during enrichment
+  And multiple contacts are associated with the company (e.g., "Facilities Manager" and "Procurement Director")
+  When the "Enrichment Engine" processes the contacts
+  Then the system should prioritize the contact matching the Primary Persona ("Facilities/Operations Manager")
+  And if roles are ambiguous, the system should queue the Lead record for "Manual Persona Assignment"
+  And the system should prevent duplicate outreach to multiple contacts within the same company without manual override
 ```
 
 ## UC-3: AI Outreach Generation
