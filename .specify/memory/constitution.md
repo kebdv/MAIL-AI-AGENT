@@ -1,50 +1,58 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+  Sync Impact Report:
+  - Version change: N/A → 1.0.0
+  - List of modified principles:
+    - [PRINCIPLE_1_NAME] → I. Plan-Driven Implementation
+    - [PRINCIPLE_2_NAME] → II. Rigorous Testing Discipline
+    - [PRINCIPLE_3_NAME] → III. Multi-Modal Data Extraction
+    - [PRINCIPLE_4_NAME] → IV. Intelligent B2B Outreach Automation
+    - [PRINCIPLE_5_NAME] → V. Model-Agnostic OpenRouter Integration
+  - Added sections: Technology Stack & Security, Development Workflow
+  - Removed sections: None
+  - Templates requiring updates:
+    - ✅ .specify/templates/plan-template.md (Logic aligns with principles)
+    - ✅ .specify/templates/spec-template.md (Logic aligns with principles)
+    - ✅ .specify/templates/tasks-template.md (Logic aligns with principles)
+    - ✅ .gemini/commands/speckit.constitution.toml (Updated outdated references)
+  - Follow-up TODOs: None
+-->
+
+# Certified AI-Powered Email Assistant (TRIPLE MS) Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Plan-Driven Implementation
+All development MUST adhere strictly to the logic and phases defined in `PLAN.md`. Any divergence from the established roadmap requires a formal plan amendment and justification. This ensures structural integrity and alignment with the long-term goal of building a SaaS-ready sales engine.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Rigorous Testing Discipline
+A comprehensive testing strategy is mandatory. We MUST focus on empirical validation of OCR accuracy for business cards and PDFs, email generation quality (Arabic/English), and lead scoring effectiveness. "Best testing" means verifying behavioral correctness at every phase, from extraction to delivery.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Multi-Modal Data Extraction
+The system MUST leverage high-quality vision and text models (via OpenRouter) to extract structured company and contact information from diverse inputs, including business card images and PDF documents. Accuracy in data extraction is the foundation of the outreach engine.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Intelligent B2B Outreach Automation
+Efficiency is achieved through a streamlined, end-to-end workflow: Ingest → Extract → Validate → Enrich → Score → Generate → Send → Track. The system MUST automate this pipeline while maintaining strict validation rules to ensure high-quality, professional outreach.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Model-Agnostic OpenRouter Integration
+To maintain flexibility and access the latest AI capabilities, the system MUST interact with AI models exclusively through OpenRouter. This decouples the application logic from specific model providers, allowing for seamless updates to Vision and Text services.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technology Stack & Security
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+The project employs a modern, modular stack:
+- **Backend**: FastAPI (Python) for the core API services.
+- **Frontend**: Electron + React for the desktop interface.
+- **Storage**: SQLite for local persistence (SQLAlchemy ORM), with a path to PostgreSQL for SaaS scaling.
+- **Security**: Sensitive credentials (OpenRouter API Keys, SMTP passwords) MUST NEVER be logged, printed, or committed to source control. Use environment variables and secure configuration management.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+We follow the Spec Kit approach (Phases 0-7) to ensure a modular and scalable architecture:
+- Separation of concerns between Frontend, Backend, and AI layers.
+- SaaS-ready design from day one (normalized schema, API-first).
+- Iterative Plan-Act-Validate cycle for every feature implementation.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This Constitution is the foundational governing document of the project and supersedes all other documentation or practices. Amendments require a version bump and an updated Sync Impact Report. Compliance is verified through project-wide audits and the `update-agent-context.ps1` runtime guidance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-04-06 | **Last Amended**: 2026-04-06
